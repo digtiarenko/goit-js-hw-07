@@ -1,14 +1,17 @@
 .image-list {
   display: flex;
   list-style-type: none;
-  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0;
+  max-width: 1200px;
 }
 
 .image-list--item {
   padding: 20px;
   margin: 10px;
   max-height: 240px;
+  max-width: ;
   background-color: #73af5b;
 }
 
