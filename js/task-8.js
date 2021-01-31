@@ -11,13 +11,14 @@ const boxesParentNode = document.querySelector('#boxes');
 // Вешаем слушатель
 createBoxesRef.addEventListener('click', () => {
   boxesParentNode.append(...boxesArray);
+  inputRef.value = '';
 });
 destroyBoxesRef.addEventListener('click', () => {
   destroyBoxes();
   console.log('хоп');
 });
-let numberOfBoxes = 0;
-inputRef.addEventListener('input', event => {
+let numberOfBoxes;
+inputRef.addEventListener('change', event => {
   createBoxes(inputRef.value);
   numberOfBoxes = event.target.value;
   console.log(numberOfBoxes);
@@ -40,9 +41,15 @@ const createBoxes = numberOfBoxes => {
 
 // Функция удоления
 
+// const destroyBoxes = () => {
+//   boxesParentNode.remove(...boxesParentNode.children);
+//   boxesArray = [];
+// };
+
 const destroyBoxes = () => {
-  boxesParentNode.remove(...boxesParentNode.children);
+  boxesParentNode.innerHTML = '';
   boxesArray = [];
+  inputRef.value = '';
 };
 
 // Рандомный цвет
